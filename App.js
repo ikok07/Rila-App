@@ -6,6 +6,7 @@ import store from "./store/store";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import ToasterMessage from "./components/ui/ToasterMessage";
 
+
 export default function App() {
   return <>
     <StatusBar barStyle="dark-content" />

@@ -148,6 +148,6 @@ const styles = StyleSheet.create({
         fontWeight: "semibold"
     },
     text: {
-        color: Colors.tertiary
+        color: Colors.secondary
     }
 })

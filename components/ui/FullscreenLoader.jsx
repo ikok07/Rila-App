@@ -3,7 +3,7 @@ import {Colors} from "../../config/constants";
 import {FadeIn, FadeOut} from "react-native-reanimated";
 import Animated from "react-native-reanimated";
 
-export function FullscreenLoader({loadingText = "Loading"}) {
+export function FullscreenLoader({loadingText = "Зареждане"}) {
 
     return <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.rootContainer}>
         <ActivityIndicator size={"large"} color={Colors.primary}/>

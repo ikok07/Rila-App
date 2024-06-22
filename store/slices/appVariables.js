@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {Image} from "react-native";
 
 const appVariables = createSlice({
     name: "appVariables",
@@ -8,7 +9,7 @@ const appVariables = createSlice({
             type: "error",
             text: ""
         },
-        userToken: null
+        userToken: null,
     },
     reducers: {
         setMessage: (state, action) => {

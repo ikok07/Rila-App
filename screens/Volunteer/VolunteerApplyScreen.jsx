@@ -2,8 +2,11 @@ import {Image, ScrollView, StyleSheet, Text, View} from "react-native";
 import {Colors} from "../../config/constants";
 import PrimaryInput from "../../components/ui/PrimaryInput";
 import {VolunteerApplyForm} from "../../components/Volunteer/VolunteerApplyForm";
+import {useCreateVolunteerMutation} from "../../store/slices/volunteerUser";
 
 export default function VolunteerApplyScreen() {
+
+
     return <ScrollView>
         <View style={styles.rootContainer}>
             <Image source={require("../../assets/volunteer-apply.png")} style={styles.image} />

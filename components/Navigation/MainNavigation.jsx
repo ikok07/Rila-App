@@ -15,13 +15,13 @@ const Stack = createNativeStackNavigator()
 export default function MainNavigation()  {
     const dispatch = useDispatch()
     const {token, error} = useJwt()
-    
+
     useEffect(() => {
         async function updateToken() {
             if (!error) dispatch(setUserToken(token))
         }
         updateToken()
-    }, []);
+    }, [token]);
 
     return <Stack.Navigator
         screenOptions={{

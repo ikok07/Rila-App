@@ -7,10 +7,27 @@ const baseQuery = fetchBaseQuery({
         if (token) headers.set("Authorization", `Bearer ${token}`)
         return headers
     },
+
     timeout: 30000
 })
 
-const baseQueryWithRetry = retry(baseQuery, {maxRetries: 3})
+const baseQueryWithRetry = retry(
+    baseQuery,
+    {
+        maxRetries: 3,
+        retryCondition: (
+            error,
+            action,
+            retries
+        ) => {
+
+            if (error.data && error.data.identifier === "NotFound") {
+                return false
+            }
+            if (retries.attempt < 3) return true
+        }
+    }
+)
 
 export const backendApi = createApi({
     reducerPath: "backendApi",
@@ -18,5 +35,5 @@ export const backendApi = createApi({
     refetchOnReconnect: true,
     refetchOnFocus: true,
     endpoints: () => ({}),
-    tagTypes: []
+    tagTypes: ["VolunteerUser", "VolunteerEvents"]
 })
