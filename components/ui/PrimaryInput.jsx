@@ -10,6 +10,7 @@ export default function PrimaryInput({label, unit, placeholder, value, setValue,
         <View style={styles.inputWrapper}>
             <TextInput
                 placeholder={placeholder}
+                placeholderTextColor={Colors.tertiary}
                 value={value}
                 onChangeText={setValue}
                 editable={!disabled}
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         borderColor: Colors.lightGray1,
         borderRadius: 7,
         paddingHorizontal: 10,
-        paddingVertical: 10,
+        paddingVertical: 5,
     },
     inputWrapper: {
       flexDirection: "row",

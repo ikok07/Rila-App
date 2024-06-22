@@ -12,6 +12,6 @@ export default function HomeScreen() {
     const dispatch = useDispatch()
     
     return <View>
-        <Text>{userToken}</Text>
+        <Text>TBD</Text>
     </View>
 }

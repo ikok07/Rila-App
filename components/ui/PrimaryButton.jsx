@@ -12,7 +12,7 @@ export default function PrimaryButton({children, style, textStyle, onPress, disa
 
 const styles = StyleSheet.create({
     rootContainer: {
-        backgroundColor: Colors.primary,
+        backgroundColor: Colors.accent,
         paddingVertical: 10,
         borderRadius: 7
     },
