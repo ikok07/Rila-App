@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: "70%",
-        height: 200,
+        height: 280,
         alignSelf: "center"
     },
     headerContainer: {

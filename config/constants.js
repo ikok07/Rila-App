@@ -8,5 +8,6 @@ export const Colors = {
     lightGray2: "#e8e8e8",
     textLight: "#EEEEEE",
     bg: "#ffffff",
-    bgAlt: "#f4f9f4"
+    bgAlt: "#f4f9f4",
+    primaryLowOpacity: "rgba(51,51,51,0.8)"
 }

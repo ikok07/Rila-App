@@ -75,17 +75,17 @@ export default function ToasterMessage() {
         case "success":
             icon = "checkmark-circle"
             color = "#13a688"
-            heading = "Success"
+            heading = "Успех"
             break
         case "info":
             icon = "information-circle"
             color = "#136ea6"
-            heading = "Info"
+            heading = "Забележка"
             break
         case "error":
             icon = "alert-circle-sharp"
             color = "#d03c38"
-            heading = "Error"
+            heading = "Грешка"
             break
         default:
             icon = "alert-circle-sharp"

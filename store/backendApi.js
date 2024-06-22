@@ -35,5 +35,5 @@ export const backendApi = createApi({
     refetchOnReconnect: true,
     refetchOnFocus: true,
     endpoints: () => ({}),
-    tagTypes: ["VolunteerUser", "VolunteerEvents"]
+    tagTypes: ["VolunteerUser", "VolunteerEvents", "ArticleSections", "Article"]
 })
