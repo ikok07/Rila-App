@@ -8,7 +8,7 @@ export default function VolunteerApplyScreen() {
 
 
     return <ScrollView>
-        <View style={styles.rootContainer}>
+        <View style={styles.rootContainer} behavior="padding">
             <Image source={require("../../assets/volunteer-apply.png")} style={styles.image} />
 
             <View style={styles.headerContainer}>

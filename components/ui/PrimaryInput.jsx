@@ -2,7 +2,19 @@ import {StyleSheet, Text, TextInput, View} from "react-native";
 import {Colors} from "../../config/constants";
 import {useState} from "react";
 
-export default function PrimaryInput({label, unit, placeholder, value, setValue, disabled, autoCapitalize = true, keyboardType}) {
+export default function PrimaryInput(
+    {
+        label,
+        unit,
+        placeholder,
+        value,
+        setValue,
+        disabled,
+        autoCapitalize = true,
+        autoCorrect = true,
+        keyboardType
+    }
+) {
 
     const [isFocused, setIsFocused] = useState(false)
 
@@ -19,6 +31,7 @@ export default function PrimaryInput({label, unit, placeholder, value, setValue,
                 onBlur={() => setIsFocused(false)}
                 keyboardType={keyboardType}
                 autoCapitalize={autoCapitalize}
+                autoCorrect={autoCorrect}
             />
             {unit && <Text style={styles.unit}>{unit}</Text>}
         </View>
@@ -34,7 +47,7 @@ const styles = StyleSheet.create({
         borderColor: Colors.lightGray1,
         borderRadius: 7,
         paddingHorizontal: 10,
-        paddingVertical: 5,
+        paddingVertical: 10,
     },
     inputWrapper: {
       flexDirection: "row",

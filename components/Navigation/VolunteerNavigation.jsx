@@ -28,7 +28,7 @@ export default function VolunteerNavigation() {
     >
         {volunteerUser && <>
             <Stack.Screen name="VolunteerHubScreen" component={VolunteerHubScreen}  options={{
-                title: "Доброволческа програма",
+                title: "Доброволец",
                 headerShown: false
             }}/>
             <Stack.Screen name="VolunteerEventDetails" component={VolunteerEventDetailsScreen}  options={{

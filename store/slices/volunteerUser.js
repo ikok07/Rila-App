@@ -21,7 +21,7 @@ const volunteerUserApi = backendApi.injectEndpoints({
             query: () => "volunteer/events",
             providesTags: ["VolunteerEvents"],
             transformResponse: response => response.data
-        })
+        }),
     })
 })
 

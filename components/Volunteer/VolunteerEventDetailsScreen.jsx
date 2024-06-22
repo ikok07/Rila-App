@@ -1,18 +1,22 @@
-import {Image, StyleSheet, Text, View} from "react-native";
+import {ActivityIndicator, Image, ScrollView, StyleSheet, Text, View} from "react-native";
 import VolunteerEventRowData from "./VolunteerEventRowData";
 import {FontAwesome5, FontAwesome6, MaterialCommunityIcons} from "@expo/vector-icons";
 import PrimaryButton from "../ui/PrimaryButton";
 import {FullscreenLoader} from "../ui/FullscreenLoader";
 import {useGetVolunteerEventsQuery} from "../../store/slices/volunteerUser";
+import MapView from "react-native-maps";
+import {useGetLocationDataQuery} from "../../store/geocodingApi";
+import Animated, {FadeIn, FadeOut} from "react-native-reanimated";
 
 export default function VolunteerEventDetailsScreen({route}) {
     const {data: events, isLoading} = useGetVolunteerEventsQuery()
-
     const event = events.filter(event => event.id === route.params.eventId)[0]
+
+    const {data: locationData, isLoading: isGettingLocationData, error} = useGetLocationDataQuery(event.location)
 
     if (isLoading) return <FullscreenLoader />
 
-    return <View style={styles.rootContainer}>
+    return <ScrollView style={styles.rootContainer}>
         <Image source={{uri: event.image}} style={styles.image}/>
         <View style={styles.headingContainer}>
             <Text style={styles.title}>{event.title}</Text>
@@ -41,8 +45,25 @@ export default function VolunteerEventDetailsScreen({route}) {
             <Text style={styles.sectionTitle}>Информация</Text>
             <Text>{event.description || "Няма информация"}</Text>
         </View>
+        {isGettingLocationData ?
+            <Animated.View entering={FadeIn.duration(150)} exiting={FadeOut.duration(150)}>
+                <ActivityIndicator size="small" style={styles.loader}/>
+            </Animated.View>
+            :
+            <Animated.View entering={FadeIn.duration(150)} exiting={FadeOut.duration(150)}>
+                <MapView
+                    style={styles.map}
+                    initialRegion={{
+                        latitude: locationData[0].lat,
+                        longitude: locationData[0].lon,
+                        latitudeDelta: 0.09,
+                        longitudeDelta: 0.09
+                    }}
+                />
+            </Animated.View>
+        }
         <PrimaryButton style={styles.button}>Присъединяване</PrimaryButton>
-    </View>
+    </ScrollView>
 }
 
 const styles = StyleSheet.create({
@@ -71,6 +92,15 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         fontSize: 18
+    },
+    loader: {
+      height: 200
+    },
+    map: {
+        width: "100%",
+        height: 200,
+        borderRadius: 12,
+        marginTop: 30
     },
     button: {
         marginVertical: 25

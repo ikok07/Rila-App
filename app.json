@@ -21,9 +21,6 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.hackathon.template"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }

@@ -19,7 +19,9 @@ export default function VolunteerHubScreen() {
                 <Text style={styles.subheadingText}>Разгледай настоящите кампании, в които можеш да се включиш</Text>
             </View>
             <View style={styles.volunteerEventsContainer}>
-                <Text style={styles.volunteerEventsHeader}>Доброволчески дейности около теб</Text>
+                <View style={styles.volunteerEventsHeaderContainer}>
+                    <Text style={styles.volunteerEventsHeader}>Доброволчески дейности около теб</Text>
+                </View>
                 {events.map((event, index) => {
                     return <VolunteerEventRow key={index} event={event}/>
                 } )}
@@ -46,12 +48,14 @@ const styles = StyleSheet.create({
     volunteerEventsContainer: {
         marginTop: 30,
     },
+    volunteerEventsHeaderContainer: {
+        borderBottomColor: Colors.tertiary,
+        borderBottomWidth: 1,
+        paddingBottom: 10
+    },
     volunteerEventsHeader: {
         fontSize: 16,
         fontWeight: "bold",
-        borderBottomColor: Colors.lightGray1,
-        borderBottomWidth: 1,
-        paddingBottom: 10
     },
     rowImage: {
         width: 45,

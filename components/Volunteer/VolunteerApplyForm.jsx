@@ -9,7 +9,7 @@ import {setMessage} from "../../store/slices/appVariables";
 
 export function VolunteerApplyForm() {
 
-    const [createVolunteer, {isLoading, isSuccess}] = useCreateVolunteerMutation()
+    const [createVolunteer, {isLoading, error, isSuccess}] = useCreateVolunteerMutation()
 
     const {userToken} = useAppVariables()
     const dispatch = useDispatch()
@@ -29,7 +29,7 @@ export function VolunteerApplyForm() {
 
         createVolunteer(body)
     }
-
+    console.log(error)
     useEffect(() => {
         if (isSuccess) dispatch(setMessage({shown: true, type: "success", text: "Успешна регистрация!"}))
     }, [isSuccess]);
@@ -40,8 +40,8 @@ export function VolunteerApplyForm() {
             <PrimaryInput label="Фамилия" value={lName} setValue={setLName} />
         </View>
         <View style={styles.col}>
-            <PrimaryInput label="Имейл" placeholder="youremail@email.com" value={email} setValue={setEmail} />
-            <PrimaryInput label="Телефон" placeholder="+359..." value={phone} setValue={setPhone}/>
+            <PrimaryInput label="Имейл" placeholder="youremail@email.com" value={email} setValue={setEmail} autoCapitalize={false} autoCorrect={false}/>
+            <PrimaryInput label="Телефон" placeholder="+359..." value={phone} setValue={setPhone} autoCapitalize={false} keyboardType="number-pad" autoCorrect={false}/>
             <PrimaryInput label="Населено място" placeholder="София..." value={city} setValue={setCity}/>
         </View>
 

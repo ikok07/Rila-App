@@ -28,11 +28,12 @@ const styles = StyleSheet.create({
     },
     image: {
         width: "70%",
-        height: 200,
+        height: 250,
         alignSelf: "center"
     },
     textContainer: {
         alignItems: "center",
+        gap: 7
     },
     heading: {
         fontSize: 24,

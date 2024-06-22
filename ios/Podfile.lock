@@ -973,6 +973,8 @@ PODS:
   - React-Mapbuffer (0.74.2):
     - glog
     - React-debug
+  - react-native-maps (1.14.0):
+    - React-Core
   - react-native-pure-jwt (3.0.2):
     - JWT (= 3.0.0-beta.12)
     - React
@@ -1320,6 +1322,7 @@ DEPENDENCIES:
   - React-jsitracing (from `../node_modules/react-native/ReactCommon/hermes/executor/`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
+  - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-pure-jwt (from `../node_modules/react-native-pure-jwt`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
@@ -1435,6 +1438,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
+  react-native-maps:
+    :path: "../node_modules/react-native-maps"
   react-native-pure-jwt:
     :path: "../node_modules/react-native-pure-jwt"
   react-native-safe-area-context:
@@ -1540,6 +1545,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 0fa7f78d8fdda794667cb2e6f19c874c1cf31d7e
   React-logger: 29fa3e048f5f67fe396bc08af7606426d9bd7b5d
   React-Mapbuffer: bf56147c9775491e53122a94c423ac201417e326
+  react-native-maps: cbf2f03bfeebfd7ec45966b066db13a075fd2af3
   react-native-pure-jwt: c7aabf3e38f688922741774c5b37d1288fc64311
   react-native-safe-area-context: dcab599c527c2d7de2d76507a523d20a0b83823d
   React-nativeconfig: 9f223cd321823afdecf59ed00861ab2d69ee0fc1
